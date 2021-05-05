@@ -9,7 +9,18 @@
 </head>
 <body>
   <h1>Danielle's test site!</h1>
-  <h2>
+  <div>
+    <label for="transportation">best form of transportation:</label>
+      <select name="transport" id="modality">
+      <option value="bike">bike</option>
+      <option value="boat">boat</option>
+      <option value="bus">bus</option>
+      <option value="car">car</option>
+      <option value="walking">walking</option>
+      <option value="train">train</option>
+      <button id="submit" class="button" onclick="alert('you better not have picked car :D')">submit</button>
+</select>
+  </div>  
   <div>
     <h3>submit some info</h3>
     <form class="login signupform" id="new_user">
@@ -17,8 +28,7 @@
     <input autofocus="autofocus" class="email" id="user_email" name="email" placeholder="Email Address" tabindex="1" type="email">
     <label>Password</label>
     <input class="field with-reset" id="user_password" name="user[password]" placeholder="Password" tabindex="2" type="password" />
-      <button onclick="alert('Thanks!')">submit</button>
-    <input class="button b-big" name="commit" tabindex="3" type="submit" value="Sign In" />
+    <button id="submit" class="button" onclick="alert('Thanks!')">submit</button>
     </form>
    </div>
 </body>
