@@ -19,21 +19,23 @@
       <option value="walking">walking</option>
       <option value="train">train</option>
 </select>
-   <button id="submit_transit" class="button transit" onclick="alert('please say you didn't pick car')">submit</button>
+   <button id="submit_transit" class="button" onclick="alert('please say you didn't pick car')">submit</button>
   </div>  
   <div>
     <h3>submit some info</h3>
     <form class="information form" id="info">
     <label>Name</label>
     <input autofocus="autofocus" class="field" id="name" name="name" placeholder="Name" tabindex="1" type="text">
-    <label>Preferred Name</label>
-    <input class="field" id="preferred" name="preferred" placeholder="Preferred Name" tabindex="2" type="text" />
-    <input class="button submit" id="user_login" type="submit" value="submit"/>
+    <label>Favorite Plant</label>
+    <input class="field" id="plant" name="plant" placeholder="Favorite Plant Name" tabindex="2" type="text" />
+    <input class="button submit" id="user_submit" type="submit" value="submit"/>
     </form>
+  </div>
     <br>
     <br>
     <br>
+  <div>
     <button id="click" class="button" onclick="alert('Thanks!')">click me</button>
-   </div>
+  </div>
 </body>
 </html>
