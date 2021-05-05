@@ -9,14 +9,17 @@
 </head>
 <body>
   <h1>Danielle's test site!</h1>
+  <h2>
   <div>
-    <form accept-charset="UTF-8" action="/login" class="login signupform" id="new_user" method="post">
+    <h3>submit some info</h3>
+    <form class="login signupform" id="new_user">
     <label>Email</label>
     <input autofocus="autofocus" class="email" id="user_email" name="email" placeholder="Email Address" tabindex="1" type="email">
     <label>Password</label>
     <input class="field with-reset" id="user_password" name="user[password]" placeholder="Password" tabindex="2" type="password" />
+      <button onclick="alert('Thanks!')">submit</button>
     <input class="button b-big" name="commit" tabindex="3" type="submit" value="Sign In" />
-      </div>
-</form>
+    </form>
+   </div>
 </body>
 </html>
