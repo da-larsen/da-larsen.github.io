@@ -8,7 +8,14 @@
   heap.load("2385132396");
 </script>
   <script type="text/javascript">
-     if (heap.identity) {Appcues.identify(heap.identity);console.log("Identified", heap.identity);};
+      setTimeout(() => {
+          console.log("Trying to identify...")
+          if (heap.identity) {
+            console.log("Found heap identity", heap.identity)
+            Appcues.identify(heap.identity)
+            console.log("Identified", heap.identity)
+          }
+      }, 1000)
     </script>
 </head>
 <body>
