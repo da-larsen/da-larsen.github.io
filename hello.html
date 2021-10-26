@@ -16,6 +16,11 @@
             console.log("Identified", heap.identity)
           }
       }, 1000)
+      try {
+        console.log("Event triggered", heap, Appcues)
+      } catch (e) {
+        console.error("error trying to see if heap/Appcues exist", e)
+      }
     </script>
 </head>
 <body>
