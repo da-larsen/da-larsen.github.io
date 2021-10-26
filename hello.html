@@ -10,10 +10,10 @@
   <script type="text/javascript">
       setTimeout(() => {
           console.log("Trying to identify...")
-          if (heap.identity) {
-            console.log("Found heap identity", heap.identity)
-            Appcues.identify(heap.identity)
-            console.log("Identified", heap.identity)
+          if (heap.userId) {
+            console.log("Found heap user ID", heap.userId)
+            Appcues.identify(heap.userId)
+            console.log("Identified", heap.userId)
           }
       }, 1000)
       try {
