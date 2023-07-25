@@ -78,8 +78,11 @@
     </a>
       </span>
         </div>
-  <div>
-    <iframe src="https://da-larsen.github.io/iframe" height="200" width="300" title="iframe"></iframe>
-  </div>
+  <div data-heap-redact-attributes='attr1,attr2'>
+    <div>
+      <p id='customer info' attr1='something sensitive' attr2='something even more sensitive' attr3='completely safe'>Customer Profile</p>
+      <button id="test-attribute" class="button" test="test1" onclick="alert('attribute redact!')">Redact Attributes</button>
+    </div>
+</div>
   </body>
 </html>
