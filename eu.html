@@ -1,0 +1,71 @@
+head>
+  <meta charset="utf-8">
+  <title>danielle's EU test site</title>
+  <script type="text/javascript">
+  window.heapReadyCb=window.heapReadyCb||[],window.heap=window.heap||[],heap.load=function(e,t){window.heap.envId=e,window.heap.clientConfig=t=t||{},window.heap.clientConfig.shouldFetchServerConfig=!1;var a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src="https://cdn.us.heap-api.com/config/"+e+"/heap_config.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(a,r);var n=["init","startTracking","stopTracking","track","resetIdentity","identify","getSessionId","getUserId","getIdentity","addUserProperties","addEventProperties","removeEventProperty","clearEventProperties","addAccountProperties","addAdapter","addTransformer","addTransformerFn","onReady","addPageviewProperties","removePageviewProperty","clearPageviewProperties","trackPageview"],i=function(e){return function(){var t=Array.prototype.slice.call(arguments,0);window.heapReadyCb.push({name:e,fn:function(){heap[e]&&heap[e].apply(heap,t)}})}};for(var p=0;p<n.length;p++)heap[n[p]]=i(n[p])};
+  heap.load("2385132396");
+</script>
+</head>
+<body>
+  <h1>Danielle's EU test site!</h1>
+   <div id="testsection">
+    <h3>Test Section</h3>
+    <button id="test-1" class="button" test="test1" onclick="alert('Tested!')">test 1</button>
+    <button id="test-2" class="button" test="test2" onclick="alert('Tested!')">test 2</button>
+  </div>
+  <div class="blue container" id="mainContainer">
+    <span class="choices" data-choice="unselected">
+        <ul id="choices" class="blue">
+            <li class="choice-1/3">First</li>
+            <li class="choice2/3">Second</li>
+            <li class="3/3">Third</li>
+        </ul>
+    </span>
+</div>
+  <div id="zorp" class="purple">
+    <span class="green yellow" cta-header="Welcome!">
+        Welcome!
+    </span>
+    <a href="https://da-larsen.github.io/" data-welcome="You are really welcome" class="welcome blorp" target="_blank">
+        Please join us!
+    </a>
+</div>
+<div>
+    <h3>submit some more info</h3>
+    <form class="information form" id="info">
+    <label>Actual Favorite Plant</label>
+    <input class="field" id="true_plant" name="plant" placeholder="True Favorite Plant Name" tabindex="2" type="text" />
+    <input class="button submit" id="user_submit_true_plant" type="submit" value="submit"/>
+    </form>
+  </div>
+<div>
+  <input id="lastName" data-testid="unmaskedInput" name="lastName" aria-invalid="false" aria-required="true" aria-label="Last Name" role="textbox" type="text" data-uid="lastName" data-setstaticid="true" data-private="lipsum" class="css-b101vk" value="" data-staticid="1699486212-input-type:text&amp;name:lastName">
+  </div>
+    <div class="blue buttons" id="notMainContainer">
+    <span class="choices" data-choice="selected">
+            <button class="choice-1/3">First</li>
+            <button class="choice2/3">Second</li>
+            <button class="3/3">Third</li>
+    </span>
+      </div>
+  <div>
+      <span>
+          <a href="https://da-larsen.github.io/testing/test.html?test" data-welcome="You are really welcome" class="welcome test">
+        testing 1
+    </a>
+        <a href="https://da-larsen.github.io/testing/test.test" data-welcome="You are really welcome" class="welcome test">
+        testing 2
+    </a>
+        <a href="https://da-larsen.github.io/test.test" data-welcome="You are really welcome" class="welcome test">
+        testing 2
+    </a>
+      </span>
+        </div>
+  <div data-heap-redact-attributes='attr1,attr2'>
+    <div>
+      <p id='customer info' attr1='something sensitive' attr2='something even more sensitive' attr3='completely safe'>Customer Profile</p>
+      <button id="test-attribute" class="button" test="test1" onclick="alert('attribute redact!')">Redact Attributes</button>
+    </div>
+</div>
+  </body>
+</html>
