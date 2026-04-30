@@ -27,52 +27,17 @@
     }
   })();
 </script>
-
-  <!-- ============================================================
-       BUG 1 — trackPageview called with an object {} instead of
-       an array []. This causes a SyntaxError at parse time:
-         "Uncaught SyntaxError: Unexpected string"
-       FIX: replace _uxa.push({"trackPageview"})
-                with _uxa.push(["trackPageview"])
-  ============================================================ -->
-  <script>
-    _uxa.push({"trackPageview"})
-  </script>
-
-  <!-- ============================================================
-       BUG 2 — setCustomVariable called with (name, value) instead
-       of the required (position, name, value). No JS error is
-       thrown, but the custom variable never registers on pageview.
-       FIX: replace ["setCustomVariable", "PageType", "Homepage"]
-              with ["setCustomVariable", 1, "PageType", "Homepage"]
-  ============================================================ -->
-  <script>
-    window._uxa.push(["setCustomVariable", "PageType", "Homepage"]);
-  </script>
-
-  <!-- ============================================================
-       BUG 3 — XMLHttpRequest prototype is patched to inject an
-       extra "x-client-id" header on every request. The server's
-       CORS preflight does not allow this header, causing:
-         "Access to XMLHttpRequest … has been blocked by CORS policy:
-          Request header field x-client-id is not allowed by
-          Access-Control-Allow-Headers in preflight response."
-       FIX: remove the XHR override (or stop adding the header).
-  ============================================================ -->
-  <script>
-    var oldSend = XMLHttpRequest.prototype.send;
-    XMLHttpRequest.prototype.send = function(...args) {
-      this.setRequestHeader('x-client-id', 'vendor');
-      return oldSend.apply(this, args);
-    };
-  </script>
+<script src="analytics_answers.js" defer></script>
+<script src="app_answers.js" defer></script>
 
   <style>
     /* ── Reset & base ────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; background: #fff; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
+    [id] { scroll-margin-top: 92px; }
 
     /* ── Header ──────────────────────────────────── */
     header {
@@ -321,11 +286,11 @@
   <header>
     <div class="logo">Lumière</div>
     <nav>
-      <a href="#">New In</a>
-      <a href="#">Women</a>
-      <a href="#">Men</a>
-      <a href="#">Accessories</a>
-      <a href="#">Sale</a>
+      <a href="#new-in">New In</a>
+      <a href="#women">Women</a>
+      <a href="#men">Men</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#sale">Sale</a>
     </nav>
     <div class="header-actions">
       <button onclick="handleSearch()">&#128269; Search</button>
@@ -350,15 +315,15 @@
     <h2 class="section-title">Shop by Category</h2>
     <p class="section-sub">Curated collections for every occasion</p>
     <div class="category-grid">
-      <div class="category-card">
+      <div class="category-card" id="women">
         <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=70" alt="Women's Collection">
         <span class="category-label">Women</span>
       </div>
-      <div class="category-card">
+      <div class="category-card" id="men">
         <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=70" alt="Men's Collection">
         <span class="category-label">Men</span>
       </div>
-      <div class="category-card">
+      <div class="category-card" id="accessories">
         <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=70" alt="Accessories">
         <span class="category-label">Accessories</span>
       </div>
@@ -519,36 +484,6 @@
       <span>Privacy Policy &nbsp;·&nbsp; Terms of Service &nbsp;·&nbsp; Cookie Settings</span>
     </div>
   </footer>
-
-  <!-- Page interaction scripts -->
-  <script>
-    function addToCart(name, price) {
-      console.log('Added to cart:', name, '$' + price);
-      alert('Added to bag: ' + name);
-      // Simulated API call — triggers Bug 3 (CORS error due to patched XHR)
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'https://api.lumiere-store.example.com/cart', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4) {
-          console.log('Cart update response:', xhr.status);
-        }
-      };
-      xhr.send(JSON.stringify({ item: name, price: price }));
-    }
-
-    function handleSearch() { alert('Search coming soon!'); }
-    function handleAccount() { alert('Account page coming soon!'); }
-    function handleCart() { alert('Your bag is empty.'); }
-    function handleShopNow() { alert('Redirecting to Summer Edit…'); }
-
-    function handleSubscribe(e) {
-      e.preventDefault();
-      var email = document.getElementById('newsletter-email').value;
-      console.log('Newsletter subscription:', email);
-      alert('Thank you for subscribing, ' + email + '!');
-    }
-  </script>
 
 </body>
 </html>
