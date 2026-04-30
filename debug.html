@@ -6,18 +6,27 @@
   <title>Lumière | Modern Fashion</title>
 
   <!-- Contentsquare Tag -->
-  <script>
-    (function() {
-      var t = window._uxa = window._uxa || [];
-      t.push(['setAccount', '4000123456']);
-      var n = document.createElement('script');
-      n.type = 'text/javascript';
-      n.async = true;
-      n.src = '//t.contentsquare.net/uxa/4000123456.js';
-      var s = document.getElementsByTagName('script')[0];
-      s.parentNode.insertBefore(n, s);
-    })();
-  </script>
+<script type="text/javascript">
+  (function () {
+    window._uxa = window._uxa || [];
+    if (typeof CS_CONF === "undefined") {
+      window._uxa.push([
+        "setPath",
+        window.location.pathname + window.location.hash.replace("#", "?__")
+      ]);
+      var mt = document.createElement("script");
+      mt.type = "text/javascript";
+      mt.async = true;
+      mt.src = "//t.contentsquare.net/uxa/2c5142b15f133.js";
+      document.getElementsByTagName("head")[0].appendChild(mt);
+    } else {
+      window._uxa.push([
+        "trackPageview",
+        window.location.pathname + window.location.hash.replace("#", "?__")
+      ]);
+    }
+  })();
+</script>
 
   <!-- ============================================================
        BUG 1 — trackPageview called with an object {} instead of
