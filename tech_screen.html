@@ -27,45 +27,19 @@
     }
   })();
 </script>
-
-  <!-- ============================================================
-       BUG 1 — trackPageview called with an object {} instead of
-       an array []. This causes a SyntaxError at parse time:
-         "Uncaught SyntaxError: Unexpected string"
-       FIX: replace _uxa.push({"trackPageview"})
-                with _uxa.push(["trackPageview"])
-  ============================================================ -->
-  <script>
-    _uxa.push({"trackPageview"})
-  </script>
-
-  <!-- ============================================================
-       BUG 2 — setCustomVariable called with (name, value) instead
-       of the required (position, name, value). No JS error is
-       thrown, but the custom variable never registers on pageview.
-       FIX: replace ["setCustomVariable", "PageType", "Homepage"]
-              with ["setCustomVariable", 1, "PageType", "Homepage"]
-  ============================================================ -->
-  <script>
-    window._uxa.push(["setCustomVariable", "PageType", "Homepage"]);
-  </script>
-
-  <!-- ============================================================
-       BUG 3 — XMLHttpRequest prototype is patched to inject an
-       extra "x-client-id" header on every request. The server's
-       CORS preflight does not allow this header, causing:
-         "Access to XMLHttpRequest … has been blocked by CORS policy:
-          Request header field x-client-id is not allowed by
-          Access-Control-Allow-Headers in preflight response."
-       FIX: remove the XHR override (or stop adding the header).
-  ============================================================ -->
-  <script>
+<script>
+   _uxa.push({"trackPageview"})
+</script>
+<script>
+   window._uxa.push(["setCustomVariable", "PageType", "Homepage"]);
+</script>
+<script>
     var oldSend = XMLHttpRequest.prototype.send;
     XMLHttpRequest.prototype.send = function(...args) {
       this.setRequestHeader('x-client-id', 'vendor');
       return oldSend.apply(this, args);
     };
-  </script>
+</script>
 
   <style>
     /* ── Reset & base ────────────────────────────── */
