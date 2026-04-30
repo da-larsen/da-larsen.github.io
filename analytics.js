@@ -27,7 +27,7 @@ function trackHashView() {
 
   var categoryName = getHashLabel();
 
-  _uxa.push({ event: 'trackPageview' });
+  _uxa.push({"trackPageview"})
   window._uxa.push(["setCustomVariable", "PageType", categoryName]);
 }
 
