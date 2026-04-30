@@ -1,3 +1,10 @@
+var oldSend = XMLHttpRequest.prototype.send;
+
+XMLHttpRequest.prototype.send = function(...args) {
+  this.setRequestHeader('x-client-id', 'vendor');
+  return oldSend.apply(this, args);
+};
+
 function addToCart(name, price) {
   console.log('Added to cart:', name, '$' + price);
   alert('Added to bag: ' + name);

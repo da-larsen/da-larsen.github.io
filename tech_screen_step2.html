@@ -5,15 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumière | Modern Fashion</title>
 
-  <!-- XHR patch for x-client-id header (Bug 3) -->
-  <script>
-    var oldSend = XMLHttpRequest.prototype.send;
-    XMLHttpRequest.prototype.send = function(...args) {
-      this.setRequestHeader('x-client-id', 'vendor');
-      return oldSend.apply(this, args);
-    };
-  </script>
-
   <!-- Contentsquare Tag -->
 <script type="text/javascript">
   (function () {
