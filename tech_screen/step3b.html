@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-inline' 'self' *.contentsquare.net app.contentsquare.com; frame-src *.contentsquare.net; child-src blob:; worker-src blob:; img-src 'self' *.contentsquare.net https://images.unsplash.com; connect-src *.contentsquare.net *.contentsquare.com">
+  <title>Lumière | Modern Fashion</title>
+
+  <!-- Contentsquare Tag -->
+<script type="text/javascript">
+  (function () {
+    window._uxa = window._uxa || [];
+    if (typeof CS_CONF === "undefined") {
+      var mt = document.createElement("script");
+      mt.type = "text/javascript";
+      mt.async = true;
+      mt.src = "//t.contentsquare.net/uxa/2c5142b15f133.js";
+      document.getElementsByTagName("head")[0].appendChild(mt);
+    } else {
+      window._uxa.push([
+        "trackPageview",
+        window.location.pathname + window.location.hash.replace("#", "?__")
+      ]);
+    }
+  })();
+</script>
+<script src="analytics_step3b.js" defer></script>
+<script src="app_answers.js" defer></script>
+
+  <style>
+    /* ── Reset & base ────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; color: #222; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    [id] { scroll-margin-top: 92px; }
+
+    /* ── Header ──────────────────────────────────── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      border-bottom: 1px solid #e8e8e8;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+    nav { display: flex; gap: 32px; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
+    nav a:hover { border-bottom: 2px solid #222; padding-bottom: 2px; }
+    .header-actions { display: flex; gap: 20px; align-items: center; font-size: 0.85rem; }
+    .header-actions button {
+      background: none; border: none; cursor: pointer;
+      font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;
+    }
+
+    /* ── Hero ────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 580px;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1400&q=60') center/cover no-repeat;
+      opacity: 0.35;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 600px; padding: 0 24px; }
+    .hero-eyebrow { font-size: 0.78rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 16px; opacity: 0.8; }
+    .hero-title { font-size: 3.2rem; font-weight: 700; line-height: 1.1; margin-bottom: 20px; }
+    .hero-sub { font-size: 1rem; opacity: 0.85; margin-bottom: 36px; line-height: 1.6; }
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 40px;
+      background: #fff;
+      color: #111;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 2px solid #fff;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary:hover { background: transparent; color: #fff; }
+    .btn-outline {
+      display: inline-block;
+      padding: 14px 40px;
+      background: transparent;
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border: 2px solid rgba(255,255,255,0.6);
+      margin-left: 12px;
+      transition: border-color 0.2s;
+      cursor: pointer;
+    }
+    .btn-outline:hover { border-color: #fff; }
+
+    /* ── Promo bar ───────────────────────────────── */
+    .promo-bar {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 10px;
+    }
+
+    /* ── Section titles ──────────────────────────── */
+    .section { padding: 72px 48px; }
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-sub { font-size: 0.9rem; color: #666; margin-bottom: 40px; }
+
+    /* ── Category grid ───────────────────────────── */
+    .category-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .category-card {
+      position: relative;
+      height: 320px;
+      overflow: hidden;
+      background: #f4f4f4;
+    }
+    .category-card:first-child { grid-row: span 2; height: auto; min-height: 320px; }
+    .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
+    .category-card:hover img { transform: scale(1.04); }
+    .category-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.92);
+      padding: 8px 18px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* ── Product grid ────────────────────────────── */
+    .product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .product-card { cursor: pointer; }
+    .product-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #f0eeeb;
+      overflow: hidden;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s; }
+    .product-card:hover .product-img img { transform: scale(1.05); }
+    .product-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #e63946;
+      color: #fff;
+      font-size: 0.68rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      font-weight: 600;
+    }
+    .product-name { font-size: 0.88rem; font-weight: 600; margin-bottom: 4px; }
+    .product-color { font-size: 0.78rem; color: #888; margin-bottom: 6px; }
+    .product-price { font-size: 0.9rem; font-weight: 700; }
+    .product-price .original { text-decoration: line-through; color: #aaa; margin-right: 6px; font-weight: 400; }
+    .product-price .sale { color: #e63946; }
+
+    /* ── Banner ──────────────────────────────────── */
+    .banner {
+      margin: 0 48px 72px;
+      background: linear-gradient(135deg, #f8ede3 0%, #f3d9c5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 48px 64px;
+      gap: 32px;
+    }
+    .banner-text h2 { font-size: 2rem; font-weight: 700; margin-bottom: 10px; }
+    .banner-text p { color: #555; font-size: 0.95rem; margin-bottom: 24px; line-height: 1.6; }
+    .btn-dark {
+      display: inline-block;
+      padding: 13px 36px;
+      background: #111;
+      color: #fff;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #333; }
+    .banner img { width: 240px; border-radius: 4px; }
+
+    /* ── Newsletter ──────────────────────────────── */
+    .newsletter {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 72px 48px;
+    }
+    .newsletter h2 { font-size: 1.6rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; text-transform: uppercase; }
+    .newsletter p { color: #aaa; font-size: 0.9rem; margin-bottom: 32px; }
+    .newsletter-form { display: flex; max-width: 440px; margin: 0 auto; gap: 0; }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 18px;
+      font-size: 0.88rem;
+      border: none;
+      outline: none;
+    }
+    .newsletter-form button {
+      padding: 14px 28px;
+      background: #fff;
+      color: #111;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+    .newsletter-form button:hover { background: #e0e0e0; }
+
+    /* ── Footer ──────────────────────────────────── */
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      padding: 48px 48px 24px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-brand .logo { color: #fff; font-size: 1.3rem; margin-bottom: 14px; }
+    .footer-brand p { font-size: 0.83rem; line-height: 1.7; }
+    .footer-col h4 { color: #fff; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul li { font-size: 0.83rem; }
+    .footer-col ul li a:hover { color: #fff; }
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Promo bar -->
+  <div class="promo-bar">Free shipping on orders over $75 &nbsp;·&nbsp; Use code <strong>LUMIERE10</strong> for 10% off</div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Lumière</div>
+    <nav>
+      <a href="#new-in">New In</a>
+      <a href="#women">Women</a>
+      <a href="#men">Men</a>
+      <a href="#accessories">Accessories</a>
+      <a href="#sale">Sale</a>
+    </nav>
+    <div class="header-actions">
+      <button onclick="handleSearch()">&#128269; Search</button>
+      <button onclick="handleAccount()">&#128100; Account</button>
+      <button onclick="handleCart()">&#128715; Bag (0)</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">New Collection — Spring 2026</p>
+      <h1 class="hero-title">Effortless Style,<br>Every Season</h1>
+      <p class="hero-sub">Discover pieces crafted for the way you live — from morning meetings to evening escapes.</p>
+      <a class="btn-primary" href="#new-in">Shop New In</a>
+      <a class="btn-outline" href="#sale">View Sale</a>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section" id="categories">
+    <h2 class="section-title">Shop by Category</h2>
+    <p class="section-sub">Curated collections for every occasion</p>
+    <div class="category-grid">
+      <div class="category-card" id="women">
+        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=70" alt="Women's Collection">
+        <span class="category-label">Women</span>
+      </div>
+      <div class="category-card" id="men">
+        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?w=600&q=70" alt="Men's Collection">
+        <span class="category-label">Men</span>
+      </div>
+      <div class="category-card" id="accessories">
+        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=600&q=70" alt="Accessories">
+        <span class="category-label">Accessories</span>
+      </div>
+      <div class="category-card">
+        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600&q=70" alt="Sale">
+        <span class="category-label">Sale</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section" id="new-in" style="padding-top: 0;">
+    <h2 class="section-title">New Arrivals</h2>
+    <p class="section-sub">Fresh styles added this week</p>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Silk Midi Dress', 195)">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400&q=70" alt="Silk Midi Dress">
+        </div>
+        <div class="product-name">Silk Midi Dress</div>
+        <div class="product-color">Ivory / Blush Rose</div>
+        <div class="product-price">$195.00</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Linen Blazer', 145)">
+        <div class="product-img">
+          <span class="product-badge">New</span>
+          <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=400&q=70" alt="Linen Blazer">
+        </div>
+        <div class="product-name">Relaxed Linen Blazer</div>
+        <div class="product-color">Sand / Sage</div>
+        <div class="product-price">$145.00</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Wide Leg Trousers', 89)">
+        <div class="product-img">
+          <span class="product-badge">Sale</span>
+          <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400&q=70" alt="Wide Leg Trousers">
+        </div>
+        <div class="product-name">Wide Leg Trousers</div>
+        <div class="product-color">Camel / Charcoal</div>
+        <div class="product-price">
+          <span class="original">$129.00</span>
+          <span class="sale">$89.00</span>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart('Cotton Knit Sweater', 110)">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&q=70" alt="Cotton Knit Sweater">
+        </div>
+        <div class="product-name">Cotton Knit Sweater</div>
+        <div class="product-color">Oatmeal / Slate</div>
+        <div class="product-price">$110.00</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <div class="banner">
+    <div class="banner-text">
+      <h2>The Summer Edit</h2>
+      <p>Lightweight fabrics and breezy silhouettes. Our most-wanted summer pieces — now 20% off when you buy 2 or more.</p>
+      <button class="btn-dark" onclick="handleShopNow()">Shop the Edit</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&q=70" alt="Summer Edit">
+  </div>
+
+  <!-- More Products -->
+  <section class="section" id="sale" style="padding-top: 0;">
+    <h2 class="section-title">Best Sellers</h2>
+    <p class="section-sub">Customer favourites, restocked</p>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Structured Tote Bag', 165)">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=70" alt="Structured Tote Bag">
+        </div>
+        <div class="product-name">Structured Tote Bag</div>
+        <div class="product-color">Tan / Black</div>
+        <div class="product-price">$165.00</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Classic White Shirt', 75)">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&q=70" alt="Classic White Shirt">
+        </div>
+        <div class="product-name">Classic White Shirt</div>
+        <div class="product-color">White / Ecru</div>
+        <div class="product-price">$75.00</div>
+      </div>
+      <div class="product-card" onclick="addToCart('Slip Dress', 98)">
+        <div class="product-img">
+          <span class="product-badge">Sale</span>
+          <img src="https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=400&q=70" alt="Slip Dress">
+        </div>
+        <div class="product-name">Satin Slip Dress</div>
+        <div class="product-color">Champagne / Midnight</div>
+        <div class="product-price">
+          <span class="original">$140.00</span>
+          <span class="sale">$98.00</span>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart('Leather Belt', 55)">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&q=70" alt="Leather Belt">
+        </div>
+        <div class="product-name">Leather Waist Belt</div>
+        <div class="product-color">Cognac / Black</div>
+        <div class="product-price">$55.00</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h2>Join the Community</h2>
+    <p>Subscribe for early access to new arrivals, exclusive offers, and style inspiration.</p>
+    <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+      <input type="email" id="newsletter-email" placeholder="Your email address" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Lumière</div>
+        <p>Contemporary fashion for the modern wardrobe. Sustainably sourced, thoughtfully designed.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">New In</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lumière. All rights reserved.</span>
+      <span>Privacy Policy &nbsp;·&nbsp; Terms of Service &nbsp;·&nbsp; Cookie Settings</span>
+    </div>
+  </footer>
+
+</body>
+</html>

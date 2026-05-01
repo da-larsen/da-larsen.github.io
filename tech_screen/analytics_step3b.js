@@ -27,10 +27,9 @@ function trackHashView() {
 
   var categoryName = getHashLabel();
 
-  // Fixed: use the required index argument and set the cvar before the pageview is sent.
-  window._uxa.push(["setCustomVariable", 1, "PageType", categoryName]);
-  // Fixed: trackPageview must be sent as an array command, not an object payload.
-  window._uxa.push(["trackPageview"]);
+  // Fixed: setCustomVariable must come BEFORE trackPageview.
+  window._uxa.push(["setCustomVariable", "PageType", categoryName]);
+  _uxa.push(["trackPageview"]);
 }
 
 window.addEventListener('hashchange', trackHashView);
